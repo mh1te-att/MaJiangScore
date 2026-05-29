@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		1256793F2FC5ADC7003334E1 /* MaJiangScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaJiangScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1256793F2FC5ADC7003334E1 /* MaJiangScore-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MaJiangScore-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		125679412FC5ADC7003334E1 /* MaJiangScore */ = {
+		125679412FC5ADC7003334E1 /* MaJiangScore-ios */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MaJiangScore;
+			path = "MaJiangScore-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		125679362FC5ADC7003334E1 = {
 			isa = PBXGroup;
 			children = (
-				125679412FC5ADC7003334E1 /* MaJiangScore */,
+				125679412FC5ADC7003334E1 /* MaJiangScore-ios */,
 				125679402FC5ADC7003334E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		125679402FC5ADC7003334E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1256793F2FC5ADC7003334E1 /* MaJiangScore.app */,
+				1256793F2FC5ADC7003334E1 /* MaJiangScore-ios.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1256793E2FC5ADC7003334E1 /* MaJiangScore */ = {
+		1256793E2FC5ADC7003334E1 /* MaJiangScore-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1256794A2FC5ADC8003334E1 /* Build configuration list for PBXNativeTarget "MaJiangScore" */;
+			buildConfigurationList = 1256794A2FC5ADC8003334E1 /* Build configuration list for PBXNativeTarget "MaJiangScore-ios" */;
 			buildPhases = (
 				1256793B2FC5ADC7003334E1 /* Sources */,
 				1256793C2FC5ADC7003334E1 /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				125679412FC5ADC7003334E1 /* MaJiangScore */,
+				125679412FC5ADC7003334E1 /* MaJiangScore-ios */,
 			);
-			name = MaJiangScore;
+			name = "MaJiangScore-ios";
 			packageProductDependencies = (
 			);
 			productName = MaJiangScore;
-			productReference = 1256793F2FC5ADC7003334E1 /* MaJiangScore.app */;
+			productReference = 1256793F2FC5ADC7003334E1 /* MaJiangScore-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1256793A2FC5ADC7003334E1 /* Build configuration list for PBXProject "MaJiangScore" */;
+			buildConfigurationList = 1256793A2FC5ADC7003334E1 /* Build configuration list for PBXProject "MaJiangScore-ios" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1256793E2FC5ADC7003334E1 /* MaJiangScore */,
+				1256793E2FC5ADC7003334E1 /* MaJiangScore-ios */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +313,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1256793A2FC5ADC7003334E1 /* Build configuration list for PBXProject "MaJiangScore" */ = {
+		1256793A2FC5ADC7003334E1 /* Build configuration list for PBXProject "MaJiangScore-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				125679482FC5ADC8003334E1 /* Debug */,
@@ -322,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1256794A2FC5ADC8003334E1 /* Build configuration list for PBXNativeTarget "MaJiangScore" */ = {
+		1256794A2FC5ADC8003334E1 /* Build configuration list for PBXNativeTarget "MaJiangScore-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1256794B2FC5ADC8003334E1 /* Debug */,

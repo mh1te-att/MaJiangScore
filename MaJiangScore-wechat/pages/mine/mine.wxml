@@ -1,0 +1,49 @@
+<navigation-bar title="我的" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="page mine-page" scroll-y type="list">
+  <view class="profile panel">
+    <button class="avatar-button" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <image wx:if="{{avatarUrl}}" class="avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+      <view wx:else class="avatar placeholder">{{avatarInitial}}</view>
+    </button>
+    <input class="nickname-input" type="nickname" value="{{nickname}}" placeholder="微信昵称" bindinput="onNicknameInput" />
+    <button class="primary-btn save-btn" bindtap="saveProfile">保存资料</button>
+  </view>
+
+  <view class="panel stats">
+    <view class="row">
+      <text>胜场</text>
+      <text>{{user.winCount || 0}}</text>
+    </view>
+    <view class="row">
+      <text>负场</text>
+      <text>{{user.loseCount || 0}}</text>
+    </view>
+    <view class="row">
+      <text>胜率</text>
+      <text>{{winRateText}}%</text>
+    </view>
+    <view class="row">
+      <text>总积分</text>
+      <text>{{user.totalScore || 0}}</text>
+    </view>
+  </view>
+
+  <view class="history-section">
+    <view class="section-title">历史战绩</view>
+    <view wx:if="{{!histories.length}}" class="panel empty muted">暂无历史战绩</view>
+    <scroll-view wx:else class="history-scroll" scroll-x>
+      <view class="history-list">
+        <view wx:for="{{histories}}" wx:key="id" class="history-card">
+          <view class="history-room">{{item.createdAtText}}</view>
+          <view class="history-players">
+            <view wx:for="{{item.players}}" wx:for-item="player" wx:key="userName" class="history-player">
+              <view class="history-avatar placeholder small">{{player.initial}}</view>
+              <view class="history-name">{{player.userName}}</view>
+              <view class="history-score {{player.score < 0 ? 'negative' : 'positive'}}">{{player.scoreText}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</scroll-view>

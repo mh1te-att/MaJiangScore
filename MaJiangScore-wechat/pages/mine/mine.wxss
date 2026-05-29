@@ -1,0 +1,162 @@
+.mine-page {
+  padding-bottom: 48rpx;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.avatar-button {
+  width: 144rpx;
+  height: 144rpx;
+  padding: 0;
+  border-radius: 72rpx;
+  background: transparent;
+}
+
+.avatar-button::after {
+  border: 0;
+}
+
+.avatar {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 72rpx;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf2ff;
+  color: #1677ff;
+  font-size: 52rpx;
+  font-weight: 700;
+}
+
+.nickname-input {
+  width: 100%;
+  height: 84rpx;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  border: 1rpx solid #dce3ee;
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.save-btn {
+  width: 100%;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84rpx;
+  border-bottom: 1rpx solid #eef1f5;
+  font-size: 30rpx;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.history-section {
+  margin-top: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  margin: 0 0 16rpx 4rpx;
+}
+
+.empty {
+  text-align: center;
+}
+
+.history-scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.history-list {
+  display: flex;
+  gap: 20rpx;
+}
+
+.history-card {
+  width: 560rpx;
+  display: inline-flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 24rpx;
+  border: 1rpx solid #e8ecf2;
+  border-radius: 16rpx;
+  background: #ffffff;
+}
+
+.history-room {
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-bottom: 18rpx;
+}
+
+.history-players {
+  display: flex;
+  gap: 18rpx;
+}
+
+.history-player {
+  width: 116rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.history-avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+}
+
+.history-avatar.small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+
+.history-name {
+  width: 116rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.history-score {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.history-score.positive {
+  color: #188038;
+}
+
+.history-score.negative {
+  color: #d93025;
+}

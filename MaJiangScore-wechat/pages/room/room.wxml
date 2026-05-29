@@ -1,0 +1,71 @@
+<navigation-bar title="房间" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="page room-page" scroll-y type="list">
+  <view wx:if="{{room}}" class="room-header panel">
+    <view>
+      <view class="room-code">房间号 {{room.roomCode}}</view>
+      <view class="muted">房主：{{room.ownerName}}</view>
+    </view>
+    <view class="header-actions">
+      <button class="secondary-btn mini-btn" bindtap="handleReturnHome">返回首页</button>
+      <button class="secondary-btn mini-btn" bindtap="openBatch">批量支出</button>
+    </view>
+  </view>
+
+  <view wx:if="{{room}}" class="panel section">
+    <view class="section-title">玩家列表</view>
+    <scroll-view class="player-scroll" scroll-x>
+      <view class="players">
+        <view wx:for="{{room.players}}" wx:key="id" class="player {{item.isMe ? 'is-me' : ''}}" data-player="{{item}}" bindtap="selectPlayer">
+          <view class="player-avatar">{{item.initial}}</view>
+          <view class="player-name">{{item.name}}</view>
+          <view class="muted">积分 {{item.score}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{room}}" class="panel section">
+    <view class="section-title">历史积分变动</view>
+    <view wx:if="{{!room.records.length}}" class="empty muted">暂无积分变动</view>
+    <view wx:for="{{room.records}}" wx:key="id" class="record">
+      <text>{{item.playerName}}</text>
+      <text class="score-down">{{item.scoreChange}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view wx:if="{{spendPlayer}}" class="modal">
+  <view class="dialog">
+    <view class="dialog-title">支出积分</view>
+    <view class="player compact">
+      <view class="player-avatar">{{spendPlayer.initial}}</view>
+      <view class="player-name">{{spendPlayer.name}}</view>
+      <view class="muted">当前积分 {{spendPlayer.score}}</view>
+    </view>
+    <input class="amount-input" value="{{spendAmount}}" type="number" placeholder="输入支出积分" bindinput="onSpendInput" />
+    <view class="dialog-actions">
+      <button class="secondary-btn" bindtap="closeSpend">取消</button>
+      <button class="primary-btn" loading="{{loading}}" bindtap="confirmSpend">确认</button>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{batchMode && room}}" class="modal">
+  <view class="dialog">
+    <view class="dialog-title">批量支出</view>
+    <scroll-view class="batch-list" scroll-y>
+      <view wx:for="{{room.players}}" wx:key="id" class="batch-row">
+        <view class="player-avatar small">{{item.initial}}</view>
+        <view class="batch-name">
+          <view>{{item.name}}</view>
+          <view class="muted">{{item.statusText}}</view>
+        </view>
+        <input class="batch-input" disabled="{{item.isMe}}" data-id="{{item.id}}" type="number" placeholder="支出" bindinput="onBatchInput" />
+      </view>
+    </scroll-view>
+    <view class="dialog-actions">
+      <button class="secondary-btn" bindtap="closeBatch">取消</button>
+      <button class="primary-btn" loading="{{loading}}" bindtap="confirmBatch">批量支出</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<navigation-bar title="麻将记分器" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="page" scroll-y type="list">
+  <view class="user panel">
+    <image wx:if="{{user.avatarUrl}}" class="avatar" src="{{user.avatarUrl}}" mode="aspectFill"></image>
+    <view wx:else class="avatar placeholder">{{avatarInitial}}</view>
+    <view class="user-main">
+      <view class="nickname">{{user.nickname || '微信用户'}}</view>
+      <view class="muted">总积分：{{user.totalScore || 0}}</view>
+    </view>
+  </view>
+
+  <view class="stats panel">
+    <view class="stat">
+      <text class="stat-value">{{user.winCount || 0}}</text>
+      <text class="muted">胜场</text>
+    </view>
+    <view class="stat">
+      <text class="stat-value">{{user.loseCount || 0}}</text>
+      <text class="muted">负场</text>
+    </view>
+    <view class="stat">
+      <text class="stat-value">{{winRateText}}%</text>
+      <text class="muted">胜率</text>
+    </view>
+  </view>
+
+  <view class="actions panel">
+    <button class="primary-btn" loading="{{loading}}" bindtap="createRoom">创建房间</button>
+    <button class="secondary-btn" loading="{{loading}}" bindtap="openJoinRoom">加入房间</button>
+  </view>
+</scroll-view>
+
+<view wx:if="{{showJoinRoom}}" class="modal">
+  <view class="dialog">
+    <view class="dialog-title">加入房间</view>
+    <view class="join-row">
+      <input class="room-input" value="{{roomCode}}" maxlength="4" type="number" placeholder="输入四位房间号" bindinput="onRoomCodeInput" />
+    </view>
+    <view class="dialog-actions">
+      <button class="secondary-btn" bindtap="closeJoinRoom">取消</button>
+      <button class="primary-btn" loading="{{loading}}" bindtap="joinRoom">加入</button>
+    </view>
+  </view>
+</view>
