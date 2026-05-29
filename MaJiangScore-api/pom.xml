@@ -73,7 +73,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.zyc4fun.majiangscoreapi.MaJiangScoreApiApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
