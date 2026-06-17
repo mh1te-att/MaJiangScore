@@ -14,7 +14,7 @@ WORKDIR /app
 
 ENV JAVA_OPTS=""
 
-COPY --from=build /app/target/MaJiangScore-api-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
 

@@ -1,4 +1,18 @@
 services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/certs:/etc/nginx/certs:ro
+
   mysql:
     image: mysql:8.0
     container_name: mysql
@@ -39,6 +53,8 @@ services:
     ports:
       - "${SERVER_PORT}:${SERVER_PORT}"
     environment:
+      JAVA_OPTS: ${JAVA_OPTS}
+      
       SERVER_PORT: ${SERVER_PORT}
 
       DB_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE}?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterEncoding=utf8
