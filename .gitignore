@@ -1,4 +1,6 @@
 deployment/.env
+deployment/nginx/nginx.conf
 .env
 .env.*
 !.env.example
+!.nginx.conf
